@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Original vs Sequels Movies: Who wins?</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-size: 20px;
+      font-family: 'Source Sans Pro', sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+
+    .content {
+      max-width: 640px;
+      margin: auto;
+    }
+    .content2 {
+            max-width: 640px;
+            margin: auto;
+            text-align: justify;
+            font-size: 13px
+        }
+
+    .header {
+      padding: 3em 0;
+      text-align: center;
+    }
+
+    a {
+      color: #f05349;
+    }
+
+    .footer {
+      background: #f4f4f4;
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 4em;
+      padding: 4em 0;
+    }
+
+    figure {
+      margin: 0;
+      padding-bottom: 1.2em;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      text-align: center;
+      margin-top: 0.5em;
+      color: #666;
+    }
+
+    h1 {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: bold;
+      font-size: 3em;
+      line-height: 1.1;
+    }
+    .text{
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: justify;
+    }
+    .subhead {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: justify;
+    }
+
+    iframe,
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    ul {
+      margin: 0;
+      padding-bottom: 1em;
+      line-height: 1.6;
+    }
+
+    iframe {
+      padding-bottom: 1.2em;
+    }
+
+    .full-width figure {
+      text-align: center;
+    }
+    p {
+  text-align: justify;
+    }
+
+
+    code {
+      font-family: 'Source Sans Pro', sans-serif;
+      background: #fff880;
+    }
+
+    /* margin on mobile */
+    @media (max-width: 640px) {
+      body {
+        font-size: 18px;
+      }
+
+      .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+    }
+  </style>
+  <link href="scrolly-styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+<body>
+  <div class="content">
+    <div class="header">
+      <h1>Original Movies vs Sequels: Who wins?</h1>
+      <p class="subhead"> An In-Depth Analysis of IMDb Ratings: Discovering Whether Original Movies or Their Sequels Hold Higher Ratings Across the Top Franchises.
+      </p>
+    </div>
+
+    <div class="byline">
+      <p>By <a href="https://github.com/ioannapetsiou">Ioanna Petsiou</a></p>
+    </div>
+    <div>
+      <p class="subhead">Wandering across the World Wide Web, I saw there are a lot of data about movies!
+        But then, I also saw this tweet:</p>
+      <figure><img src="tweetone.png" alt="This is a screenshot from Tweeter where a user called The1stBat tweeted 'Name a movie that deserves a sequel'"></figure>
+      <p>and this:</p>
+      <figure><img src="tweettwo.png" alt="This is a screenshot from Tweeter where a user called Truggler tweeted 'These movies are the proof that some dubs are better than the original' and they posted two pictures: one of the movie Shrek(2) and one of the movie White Chicks"></figure>
+      <p><i>aaand</i> this:</p>
+      <figure><img src="tweetthree.png" alt="This is a screenshot from Tweeter where a user called Nerdist tweeted 'name a sequel that's better than the original film"></figure>
+      <p>There are many more questions asked about this topic on <a href="https://www.reddit.com/r/movies/comments/itnxj1/original_movies_are_less_and_less_coming_sequels/">Reddit</a>, <a href="https://www.quora.com/Is-the-original-always-better-than-the-sequels">Quora</a> and even Facebook! Many articles have been written, such as this one from <a href="https://www.theplantnews.com/post/movie-sequels-are-better-than-the-originals">The Plant News</a>. However, I didn't find any data-backed proof. Most of these articles are based on opinions rather than solid evidence about whether sequel movies are better than the originals.</p>
+      <p><i>But now, this will change!</i></p>
+    </div>
+    <div>
+      <p class="subhead"> <strong> <u>Franchises Ratings: From Highest to Lowest</u></strong> </p>
+    
+      <p class="subhead">After compiling a dataset of <a href="https://imdb.com"> IMDb's</a> 500 top-rated movies, each movie was categorized into its respective franchise. Movies that were not part of any franchise were excluded. From this dataset, only franchises with at least two movies in the top 500 were retained for analysis, resulting in a total of 62 movie franchises.</p>
+      <p class="subhead">The first question comes to mind is: <i>Which franchises have the highest ratings?</i></p>
+      <p class="subhead">As shown below, the top 10 highest rated franchises constist of <i> The Lord of the Rings, The Godfather, Star Wars: (Original Trilogy), The Dark Knight Trilogy, Dune, Toy Story, Kill Bill, Monty Python, Blade Runner, Avengers</i>. The franchise with the lowest rating is <i>Transformers</i>.</p>
+    <figure>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/18811489"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </figure>
+    </div>
+    <div>
+      <p class="subhead"> <strong> <u>Do original movies or their sequels have higher ratings?</u></strong> </p>
+      <p class="subhead">But first, what do <i>original</i> and <i>sequel</i> mean?</p>
+      <p>For cinema fans, original and sequel movies can mean various things, such as the thematic continuation of the story or the foundational universe where the story is set. However, in this analysis, the original refers to the first movie ever released from the franchise, while the sequels are all subsequent movies released after the original, regardless of whether their storylines occur before or after the original.</p>      
+  
+    <figure>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/18811616"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </figure>
+    </div>
+    <p class="subhead"> As shown at the graph above, the average of the IMDb ratings across all movie franchises is higher for original movies than the sequels. However, this graph refers to the total of franchises.
+    </p>
+    <p class="subhead"><i><strong><u>Let's look at each of the franchises</u></strong></i>    </p>
+  </div>
+  <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing">
+      <img src="bubblechartwithnocolor.png">
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <div>
+          <p class="subhead">As mentioned, only franchises with at least two movies in the IMDb's top 500 were retained for analysis, resulting in a total of <strong>62 movie franchises.</strong></p>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <p class="subhead">Among the 62 franchises, the <strong>original</strong> movie holds the highest rating in 41 of them. That's approximately <strong>66% of the franchises!</strong></p>
+      </div>
+      <div class="step" id="step3">
+        <p class="subhead">Only 34% of the franchises have a <strong>sequel</strong> movie as the highest-rated, which accounts for <strong>21 franchises.</strong> </p>
+      </div>
+    </div>
+  </section>
+  <div class="content">
+    <p>It's evident that original movies generally have higher ratings than their sequels.<i>But why might this be?</i></p>
+    <p>After extensive discussions with cinephile friends, it's often suggested that the lower ratings of sequels aren't necessarily because the movies are of lesser quality. Instead, it's largely due to the fact that sequels struggle to surpass the uniqueness of the original.</p>
+    <p>The original movie introduces the audience to a whole new world: it creates a novel experience and a sense of discovery. It may also set extraordinarily high expectations that sequels often find difficult to meet.</p>
+    <p>As viewers, we cherish the unique experiences and groundbreaking moments that original films offer, making it challenging for sequels to capture the same magic. </p>
+    <p>Nevertheless, both original and sequel movies contribute significantly to the richness of cinematic storytelling.</p>
+  </div>
+  <div class="footer">
+    <div class="content2">
+        <h4>Methodology</h4>
+        <p>The data for the top 500 rated movies can be found on <a href="https://imdb.com">IMBd's Website</a>.
+          The data for franchises can be found on the <a href="https://www.filmsite.org/series-boxoffice.html"> Film Site Website</a>, along with intense Google Search.
+          The original movies refer to the first movie ever released from the franchise, while the sequels are all subsequent movies released after the original, regardless of whether their storylines occur before or after the original.</p>     
+        <p>Firstly, data from IMDb's 500 top rated movies where collected. Then, each movie was assigned to its franchise and the movies with no franchises were excluded.  Only franchises with at least two movies in the top 500 were retained for analysis, resulting in a total of 62 movie franchises. Superheroes were assigned to the franchise that corresponds to their specific universe.
+
+        </p>    
+        <p>More information can be found on the <a href = "https://github.com/ioannapetsiou/movies_and_franchises">GitHub repository</a> with the data analysis.</p>
+    </div> 
+</div>
+
+  <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.6,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    })()
+
+    /*
+    This part sets up your actions. In this case, it's changing the image in the scrolly container.
+    */
+    d3.select("#step1").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bubblechartwithnocolor.png")
+    })
+
+    d3.select("#step2").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "original_with_higher_ratings.png")
+    })
+
+    d3.select("#step3").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "sequel_with_higher_ratings.png")
+    })
+  </script>
+  <style>
+    /* Change this to adjust the padding between steps */
+    .step {
+      margin-bottom: 70vh;
+    }
+  </style>
+
+</body>
+
+</html>
