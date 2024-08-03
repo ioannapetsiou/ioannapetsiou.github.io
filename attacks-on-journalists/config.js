@@ -65,7 +65,7 @@ var config = {
                 14.5% in crossfire, and 11.5% during dangerous assignments.
                 Overall, <b><u>nearly three in four of those killed had a confirmed motive</u></b>, indicating they died because of their work.</p>
                 <p>It's important to note that the reasons of death of media workers are not as frequently highlighted as those of journalists. 
-                Among those killed under unknown circumstances, 98% were media workers.</p>                `, 
+                98% of media workers died due to unknown circumstances.</p>                `, 
             location: {
                 center: [19.07994, 22.19165],
                 zoom: 1.50,
