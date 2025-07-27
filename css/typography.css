@@ -61,16 +61,13 @@ body {
   text-align: left;
 }
 
-@media only screen and (max-width: 800px) {
-  .project-title,
-  .project-card-text {
-    height: auto !important;      /* Let height grow naturally */
-    overflow: visible !important; /* Show full text */
-    display: block !important;
-    -webkit-line-clamp: unset !important; /* Remove clamping */
+/* Fix project card text overlap on small screens */
+@media only screen and (max-width: 600px) {
+  .project-title {
+    height: auto;          /* allow title height to expand */
   }
-
-  .project-card {
-    width: 100% !important; /* Make project cards full width on small screens */
+  .project-card-text {
+    height: auto;          /* allow text height to expand */
+    -webkit-line-clamp: unset; /* remove line clamp */
   }
 }
