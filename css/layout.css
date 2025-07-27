@@ -217,21 +217,15 @@ body {
   }
 }
 
-/* Small devices (phones, 600px and below) */
+/* Small devices (portrait tablets and large phones, 600px and below) */
 @media only screen and (max-width: 600px) {
   #main-content {
-    margin: 100px 20px;
-  }
-
-  .projects-container {
-    flex-direction: column;
-    gap: 34px;
+    margin: 125px 20px;
   }
 
   .project-card {
-    width: 100%;
+    max-width: 100%;
   }
 }
-
 
 

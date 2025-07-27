@@ -60,3 +60,14 @@ body {
   font-style: italic; 
   text-align: left;
 }
+
+/* Fix text collision only on small screens */
+@media only screen and (max-width: 800px) {
+  .project-card-text,
+  .project-title {
+    height: auto !important;   /* remove fixed height */
+    display: block !important; /* ensure block display */
+    -webkit-line-clamp: unset !important; /* remove any clamp */
+    overflow: visible !important; /* allow overflow if any */
+  }
+}
