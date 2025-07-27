@@ -1,14 +1,155 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Ioanna Petsiou's Portfolio</title>
-  </head>
-  <body>
-    <h1>Welcome to my website!</h1>
-    <p>My name is Ioanna Petsiou and I'm a soon to be journalist!</p>
-    <p>Below you can see the three projects I submitted for Lede 2024.</p>
-    <h4><a href ="https://ioannapetsiou.github.io/wildfires"> Here </a>you can check my first story about wildfires in Greece</h4>
-    <h4><a href ="https://ioannapetsiou.github.io/movies"> Here</a> you can check my second story about movie franchise ratings, and whether original films are better than the sequels.</h4>
-    <h4><a href ="https://ioannapetsiou.github.io/attacks-on-journalists">Here</a> you can check my third story about attacks that journalists and media workers have faced worldwide, from 1992 to 2023.</h4>
-  </body>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+
+    <link rel="icon" href="./images/project_photos/me.jpg" />
+		<title>Ioanna Petsiou</title>
+    <meta name="description" content="Ioanna Petsiou">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/typography.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+
+		<script defer src="./js/script.js"></script>
+	</head>
+	<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <!--<a class="nav-title-link" href="./index.html">-->
+      
+        <span class="nav-title">Ioanna Petsiou</span>
+    
+        <a class="button" href="mailto:ioannapeco@gmail.com">
+          <span class="button-text">Contact</span>
+        </a>
+      </a>
+    </div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div id="main-content">
+
+      <!-- PORTFOLIO HEADER -->
+      <div id="portfolio-header">
+        <div id="portfolio-header-image-container">
+        
+          <img src="./images/project_photos/me.jpg" class="portfolio-header-image">
+        </div>
+
+        <div id="portfolio-header-text-container">
+            <div class="header-text">
+              <span class="main-title">Hello! I'm Ioanna!</span>
+              <div class="body-text">I turn data into stories and pixels into meaning - I follow the data where it leads, and take you with me.</div>
+            </div>
+            <a class="button" id="my-work-link">
+              <span class="button-text">Projects</span> 
+              <img src="./images/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+        </div>
+      </div>
+
+      <!-- ABOUT SECTION -->
+     
+      <div id="about-section">
+        <span class="subheader-text">About Me</span>
+        <div class="about-section-content">
+          <div class="body-text">I am a data journalist, passionate about transforming data into stories that elevate silenced voices and expose environmental injustice.</div>
+          <div class="body-text">I hold a degree in Communication, Media and Culture from <a href="https://cmc.panteion.gr/">Panteion University</a>, where I first discovered my passion for data journalism through a project on rising temperatures in Greece, Spain, Italy, and Portugal. In 2024, I was awarded a fellowship from <a href="https://www.snf.org/">SNF</a> to attend the <a href="https://ledeprogram.com/">Lede Program</a> at Columbia University, where I gained hands-on experience with Python, web scraping, data visualization, and digital storytelling. A few months later, I received a scholarship to join Panteion’s data team at the <a href="https://journalism.csis.org/">CSIS Journalism Bootcamp</a>, where we reported on restrictive migration policies.</a></div>
+          <div class="body-text">From Athens to New York to Washington, the projects below reflect my journey through journalism, data, and storytelling.</div>
+        </div>
+      </div>
+
+      <!-- PROJECTS SECTION -->
+      <div id="my-work-section">
+        
+        <span class="subheader-text">Lede Projects - Columbia University</span>
+
+        <div class="projects-container">
+          
+          <div class="project-card">
+            <a href="https://ioannapetsiou.github.io/wildfires/"><img src="./images/project_photos/fires.jpg" class="project-image"></a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Greece in Flames: An Account of Wildfire Destruction from 2000 to 2023</div>
+              <div class="body-text project-card-text">It’s common for Greek summers to be accompanied by biblical-scale disasters, including wildfires, casualties, and thousands of burned acres.</div>
+            </div>
+            <a class="button" href="https://ioannapetsiou.github.io/wildfires/">
+              <span class="button-text">Read More</span>
+              <img src="./images/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+          <div class="project-card">
+           <a href="https://ioannapetsiou.github.io/attacks-on-journalists/"> <img src="./images/project_photos/attacks-on-journalists.jpg" class="project-image"></a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Attacks Towards Journalists and Media Workers</div>
+              <div class="body-text project-card-text">CPJ Data Reveals the World's 10 Most Dangerous Countries for Journalists: Killings, Imprisonments, and Disappearances</div>
+            </div>
+            <a class="button" href="https://ioannapetsiou.github.io/attacks-on-journalists/">
+              <span class="button-text">Read More</span>
+              <img src="./images/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+          <div class="project-card">
+           <a href="https://ioannapetsiou.github.io/movies/"> <img src="./images/project_photos/movies.png" class="project-image"></a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Original Movies vs Sequels: Who wins?</div>
+              <div class="body-text project-card-text">An In-Depth Analysis of IMDb Ratings: Discovering Whether Original Movies or Their Sequels Hold Higher Ratings Across the Top Franchises.</div>
+            </div>
+            <a class="button" href="https://ioannapetsiou.github.io/movies/">
+              <span class="button-text">Read More</span>
+              <img src="./images/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other PROJECTS SECTION -->
+      <div id="other-projects-section">
+        <span class="subheader-text">Other Projects</span>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-subtitle">Panteion University Project</div>
+            <a href="https://viewer.joomag.com/qubit-issue-no5-%CE%A4%CE%B5%CF%8D%CF%87%CE%BF%CF%82-5%CE%BF/0302945001728248155/p8"><img src="./images/project_photos/panteion.png" class="project-image"></a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Climate Crisis: From the Mediterranean... to the Balkans</div>
+              <div class="body-text project-card-text">What's happening to average temperatures in Greece, Spain, Italy, and Portugal from 1972-2022? Are extreme events -fires, floods, storms, heat- also rising?</div>
+            </div>
+            <a class="button" href="https://viewer.joomag.com/qubit-issue-no5-%CE%A4%CE%B5%CF%8D%CF%87%CE%BF%CF%82-5%CE%BF/0302945001728248155/p8">
+              <span class="button-text">Read More</span>
+              <img src="./images/icons/arrow-right.svg" class="right-arrow-icon" alt="arrow" />
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-subtitle">CSIS Journalism Bootcamp Project</div>
+            <a href="https://features.csis.org/trapped-in-transit/"><img src="./images/project_photos/csis.png" class="project-image"></a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Trapped in Transit: Migration Chokepoints in the Central Mediterranean</div>
+              <div class="body-text project-card-text">Migrants are trapped between Tunisia and Italy by restrictive policies. What can regional actors do to support sustainable solutions?</div>
+            </div>
+            <a class="button" href="https://features.csis.org/trapped-in-transit/">
+              <span class="button-text">Read More</span>
+              <img src="./images/icons/arrow-right.svg" class="right-arrow-icon" alt="arrow" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+      
+     
+      <a class="icon-link" href="mailto:ioannapeco@gmail.com">
+        <img src="./images/icons/mail.svg" class="footer-icon"/>
+      </a>
+   
+	 <a class="icon-link" href="https://github.com/ioannapetsiou">
+        <img src="./images/icons/github.svg" class="footer-icon"/>
+      </a>
+    </div>
+
+	</body>
 </html>
