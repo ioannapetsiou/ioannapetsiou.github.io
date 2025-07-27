@@ -49,40 +49,14 @@ a.icon-link:hover {
 /* Small devices (portrait tablets and large phones, 800px and below) */
 @media only screen and (max-width: 800px) {
   .navbar {
-    padding: 20px;
-    background-color: white;
-  }
-
-  #footer {
-    flex-direction: column; /* Stack items vertically */
-    padding: 20px;
-    text-align: center; /* Center text on small screens */
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-    word-wrap: break-word;
-    margin-bottom: 16px;
-  }
-
-  a.button {
-    flex-direction: row;
-    flex-wrap: wrap; /* Wrap content if too long */
-    text-align: center;
-    justify-content: center;
+    padding: 20px 20px;
+    background-color: white
   }
 }
 
-/* Paragraph Styling (add this if not already present) */
-p {
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 100%;
-  margin: 0 0 20px 0;
-}
 
 /* Button Styling */
+
 a.button {
   padding: 8px 16px;
   border: 3px solid #141414;
@@ -93,7 +67,6 @@ a.button {
   display: flex;
   gap: 5px;
   align-items: center;
-  transition: all 0.3s ease;
 }
 
 a.button:hover {
@@ -102,7 +75,9 @@ a.button:hover {
   cursor: pointer;
 }
 
+
 /* Footer Styling */
+
 #footer {
   width: 100%;
   display: flex;
@@ -115,10 +90,17 @@ a.button:hover {
 /* Link Styling */
 a.no-underline {
   text-decoration: none;
-  color: black;
+  color: black
 }
 
 a.no-underline:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+/* Small devices (portrait tablets and large phones, 800px and below) */
+@media only screen and (max-width: 800px) {
+  #footer {
+    padding: 20px 20px;
+  }
 }
