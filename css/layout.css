@@ -228,4 +228,13 @@ body {
   }
 }
 
-
+/* Additional spacing fix for project cards on mobile */
+@media only screen and (max-width: 800px) {
+  .project-card {
+    gap: 20px; /* Increase gap from 13px to 20px on mobile */
+  }
+  
+  .project-card-text-container {
+    gap: 20px; /* Increase gap from 16px to 20px on mobile */
+  }
+}
