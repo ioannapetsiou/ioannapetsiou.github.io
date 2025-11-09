@@ -91,6 +91,11 @@ body {
   gap: 16px;
 }
 
+#methodology-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .projects-container {
   display: flex;
   gap: 34px 16px;
